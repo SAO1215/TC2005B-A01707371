@@ -33,11 +33,11 @@ footer h3 {
   letter-spacing: 0.1em;
 }
 
-footer a {
+a {
 color: #F19CBB;
 }
 
-footer a:hover {
+a:hover {
   color: #23f6c8;
 }
 
@@ -66,3 +66,16 @@ ul li {
   max-width: 50em;
   padding: 1em 10em;
 }
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #2f2f2f;
+  color: white;
+  text-align: left;
+  padding: 1em 10em;
+  text-align: right;
+}
+
