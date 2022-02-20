@@ -1,0 +1,84 @@
+body {
+  color: #555;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: #F19CBB;
+  color: white;
+  letter-spacing: 0.1em;
+  text-align: left;
+  display: block;
+  padding: 1em 10em;
+}
+
+h1 {
+  background-color: white;
+  color: #F19CBB;
+  text-align: center;
+}
+
+footer {
+  background-color: #2f2f2f;
+  color: white;
+  text-align: left;
+  padding: 1em 10em;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+a {
+color: #F19CBB;
+}
+
+a:hover {
+  color: #23f6c8;
+}
+
+button {
+  background-color: #F19CBB;
+  color: white;
+  text-align: center;
+  padding: 10px 25px;
+  font-size: 16px;
+}
+
+button:hover {
+background-color: white;
+color: #F19CBB;
+}
+
+ul li {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 50em;
+}
+
+.preguntas {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 1em 10em;
+}
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #2f2f2f;
+  color: white;
+  text-align: left;
+  padding: 1em 10em;
+  text-align: right;
+}
+
+article {
+  margin: 0 auto;
+  max-width: 60em;
+}
