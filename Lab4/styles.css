@@ -66,18 +66,6 @@ ul li {
   padding: 1em 10em;
 }
 
-#footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #2f2f2f;
-  color: white;
-  text-align: left;
-  padding: 1em 10em;
-  text-align: right;
-}
-
 article {
   margin: 0 auto;
   max-width: 60em;

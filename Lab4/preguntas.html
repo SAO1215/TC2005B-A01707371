@@ -15,30 +15,47 @@
             <h3>JavaScript:</h3>
             <ul>
                 <li> ¿Qué diferencias y semejanzas hay entre Java y JavaScript? </li> 
-                <p> 
-                    Respuesta
+                <p>
+                    <strong>Diferencias</strong>
+                    <ul> 
+                        <li> <strong>Tipo de lenguaje:</strong> JS es un lenguaje interpretado, mientras que Java es un lenguaje particular porque es compilado, pero es compilado a un lenguaje intermedio llamado bytecode, que después es interpretado. </li>
+                        <li> <strong>Tipado:</strong> JavaScript tiene un tipado débil y Java presenta un tipado fuerte.</li>
+                        <li> <strong>Proposito:</strong> Mientras que Js esta recomendado para aplicaciones y páginas web, Java es un lenguaje de programación originalmente diseñado para aplicaciones integradas. </li>
+                    </ul>
                 </p>
                 <li> ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </li> 
                 <p>
-                    Respuesta 
+                    <ul> 
+                        <li> <code>getDate():</code> Devuelve el día del mes. Número entre 1 y 31. </li>
+                        <li> <code>getDay():</code> Devuelve el día de la semana. Entre 0 (domingo) y 6 (sábado). </li>
+                        <li> <code>getFullYear():</code> Devuelve el año con 4 dígitos. </li>
+                        <li> <code>getMonth():</code> Devuelve el mes. Entre 0 (enero) y 11 (diciembre). </li>
+                        <li> <code>toTimeString():</code> Convierte la parte de tiempo de un objeto Date en una cadena. </li>
+                    </ul>
                 </p>
                 <li> ¿Qué métodos tienen los arreglos? (Menciona al menos 5*) </li> 
                 <p>
-                    Respuesta 
+                    <ul> 
+                        <li> <code>find():</code> Recorre el array y retorna la primera coincidencia del elemento que se busca. </li>
+                        <li> <code>sort():</code>  Ordena los elementos del array y retorna el arreglo ordenado. </li>
+                        <li> <code>push():</code> Añade uno o más elementos al final de un array. </li>
+                        <li> <code>pop():</code> Elimina el último elemento de un array y lo devuelve. </li>
+                        <li> <code>map():</code>  Permite recorrer el array y modificar los elementos presentes en él, retornando un nuevo array con la misma longitud que el original. </li>
+                    </ul> 
                 </p>
                 <li> ¿Cómo se declara una variable con alcance local dentro de una función? </li>
                 <p> 
-                    Respuesta
+                    <em>let</em> es una palabra reservada que se utiliza para declarar variables locales o block scoped variables.
                 </p>
                 <li> ¿Qué implicaciones tiene utilizar variables globales dentro de funciones? </li>
                 <p> 
-                    Respuesta
+                    Si declaramos la variable con <em>var</em> también dentro de la función, se crea una variable local, se reduce a la función donde ha sido declarada, <em>vat</em>, a diferencia de <em>let</em>, permite redefinir la misma variable en el mismo bloque, esto puede provocar que se alteren los valores de una variable de forma accidental y genere errores o complicaciones difíciles de depurar.
                 </p>
             </ul>
         </section>
-        <div id="footer">
+        <footer>
             <h3>Versión minimizada</h3>
             <a href="http://cssminifier.com/">CSS Minifier</a>
-        </div>
+        <footer>
     </body>
 </html>
