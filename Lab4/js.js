@@ -68,14 +68,24 @@ function prob4(matrix){
 }
 
 //Problema 5
-var num_inv = 0;
-function prob5(z) {
-    var num_inv = prompt("Ingresa un número para conocer su inverso.");
-    z = num_inv;
-    let inverso = z.split('').reverse().join('');
+var z = 0;
+function prob5(numI) {
+    let z = prompt("Ingresa un número para conocer su inverso.");
+    numI = z;
+    let inverso = numI.split('').reverse().join('');
 
     let res_prob = `El inverso del numero que ingresaste es : ${inverso}`;
     document.getElementById("res_prob5").innerHTML = res_prob;
 }
 
-//Problema 5
+//Problema 6
+var w = 0;
+function prob6(deci) {
+    let w = prompt("Ingresa un número base decimal para conocer valor en binario, hexadecimal y octal.");
+    deci = parseInt(w);
+    let hexa = deci.toString(16);
+    let octa = deci.toString(8);
+    let bina = deci.toString(2);
+    let res_prob = `Decimal: ${deci}<br> Hexadecimal: ${hexa.toUpperCase()}<br> Octal: ${octa}<br> Binario: ${bina}<br>`;
+    document.getElementById("res_prob6").innerHTML = res_prob;
+}
