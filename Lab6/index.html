@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Laboratorio 6</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    <body>
+        <header>
+            <h1>Lab6: Programación Orientada a Eventos</h1> 
+            Olivia Araceli Morales Quezada <br/>
+            A01707371 <br/>
+            oliviaraceli1215@gmail.com
+        </header>
+        <a href="https://www.youtube.com/watch?v=wS5IRwPznCY"><img id="foto" src="avatarSAO.JPG" alt="Avatar_SAO"></a>
+        <h1 id="apodo">S.A.O</h1>
+        <section>
+            <h2>Validar Contraseña</h2>
+            Con JavaScript y HTML5 [y quizás CSS], desarrolla una página para validar passwords. La página debe tener una forma con 2 campos, el campo de password, y el campo de verificar password. Utiliza al máximo tu creatividad e ingeniería para que la página sea un validador de passwords de estado del arte, con la mejor experiencia para el usuario. <br><br>
+            <div class="validarContraseña">
+                <label for="contraseña">Contraseña: </label>
+                <input id="password" type="password" placeholder= "Ingresa tu contraseña"> <br>
+
+                <label for="confirmar">Confirma contraseña: </label>
+                <input id="C_password" type="password" placeholder= "Ingresa tu contraseña otra vez">
+
+                <p id="respuesta"></p>
+
+                <button id = "confirmar">Confirmar</button>
+
+            </div>
+
+            <h2>Productos</h2>
+            Con JavaScript y HTML5 [y quizás CSS], desarrolla una página para vender 3 productos de tu interés, con los precios y promociones a tu gusto. La página debe permitir al usuario escoger la cantidad de unidades de cada producto, y debe mostrar el precio total, el IVA que se está cargando, y toda la información que consideres pertinente para que la experiencia del usuario sea la mejor. La página debe validar los rangos de las unidades de cada producto. <br><br>
+            <div class="carritoProducto">
+                <div class="producto">
+                    <h2>Tripulante</h2>
+                    <img src="https://static.wikia.nocookie.net/amongus/images/9/98/Sombrero_de_Tripulante.gif/revision/latest/scale-to-width-down/400?cb=20210326102638&path-prefix=es">
+                    <h3> $ <span id="tripulante_precio">2000</span></h3>
+                    <p id="cant_t">0</p>
+                    <button id="tripulante_a">Añadir</button>
+                    <button id="tripulante_q">Quitar</button>
+
+                    <h2>Corona</h2>
+                    <img src="https://static.wikia.nocookie.net/amongus/images/b/bd/Corona.png/revision/latest/scale-to-width-down/96?cb=20210617085219&path-prefix=es">
+                    <h3> $ <span id="corona_precio">1500</span></h3>
+                    <p id="cant_c">0</p>
+                    <button id="corona_a">Añadir</button>
+                    <button id="corona_q">Quitar</button>
+
+
+                    <h2>Auriculares</h2>
+                    <img src="https://static.wikia.nocookie.net/amongus/images/3/31/Auriculares_MIRA.png/revision/latest/scale-to-width-down/167?cb=20210617090119&path-prefix=es">
+                    <h3> $ <span id="auriculares_precio">800</span></h3>
+                    <p id="cant_a">0</p>
+                    <button id="auriculares_a">Añadir</button>
+                    <button id="auriculares_q">Quitar</button>
+
+                <h2>Total: <a id="total">0</a></h2>
+                </div>
+            </div>
+            <article>
+                <h2>Preguntas Laboratorio</h2>
+                El objetivo de esta actividad es profundizar en el paradigma de programación orientada a eventos en páginas web y entender a manipular el DOM con JS para manipular dinámicamente las páginas web.
+                <br> <br>
+                <button onclick = "location.href='lab_preguntas.html'">Ver preguntas</button>
+            </article>
+        </section>
+        <br>
+        <footer>
+            <h3>Mis Links</h3>
+            <a href="https://github.com/SAO1215" target="">Github</a>
+            <br>
+            <a href="hhttps://discord.gg/8jjJVyJj">Discord</a>
+            <br>
+            <a href="https://open.spotify.com/user/livy1216?si=abf34a56a76c4a1a">Spotify</a>
+            <br>
+            <a href="https://miro.medium.com/max/960/1*ETKCijb_tVPU98ZZHTa2aA.gif">OF</a>
+
+            <h3>Preguntas Frecuentes</h3>
+            <strong>No</strong>, no es por Sword Art Online. Gracias.
+        </footer>
+        <script src="js.js"></script> 
+    </body>
+</html>
