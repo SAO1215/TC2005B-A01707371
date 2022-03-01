@@ -1,0 +1,1 @@
+Una función que reciba un string y escriba el string en un archivo de texto. Apóyate del módulo fs.
