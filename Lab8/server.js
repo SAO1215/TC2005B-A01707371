@@ -7,8 +7,16 @@ function promedio(arr) {
     }
     return (suma/arr.length);    
 }
-console.log("Una función que reciba un arreglo de números y devuelva su promedio." + promedio(arreglo));
+console.log("Una función que reciba un arreglo de números y devuelva su promedio: " + promedio(arreglo));
 
+function serieA(a, d, n) {
+    for(let i=1; i<=n; i++){
+      a = a+i*d;
+    }
+    return a;
+}
+console.log("Escoge algún problema que hayas implementado en otro lenguaje de programación, y dale una solución en js que se ejecute sobre node.");
+console.log("El calculo de una serie aritmetica de tres numeros ya dados: " + serieA(1, 3, 25));
 
 const filesystem = require('fs');
 function doc_TXT(contenido){
@@ -17,13 +25,11 @@ function doc_TXT(contenido){
 var contenido = 'Una función que reciba un string y escriba el string en un archivo de texto. Apóyate del módulo fs.';
 doc_TXT(contenido)
 
-
 const http = require('http');
 const server = http.createServer( (request, response) => {
-    console.log(request);
-    response.setHeader('Content-Type', 'text/html');
-    response.write('<!DOCTYPE html><html lang="es-mx"><head><title>Laboratorio 8</title>');
-    response.end();
+    response.writeHead(200, {"Content-type": "text/html"});
+    const html = filesystem.readFileSync(__dirname + "/lab8.html");
+    response.end(html);
 });
 
 server.listen(3000);
