@@ -1,19 +1,16 @@
 {
-  "name": "lab10",
+  "name": "lab11",
   "version": "1.0.0",
-  "description": "codigo de las sesiones de clase",
+  "description": "laboratio 11 clase",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SAO1215/TC2005B-A01707371.git"
   },
-  "keywords": [
-    "node"
-  ],
   "author": "SAO",
   "license": "MIT",
   "bugs": {
@@ -25,7 +22,6 @@
   },
   "dependencies": {
     "body-parser": "^1.19.2",
-    "ejs": "^3.1.6",
     "express": "^4.17.3"
   }
 }
