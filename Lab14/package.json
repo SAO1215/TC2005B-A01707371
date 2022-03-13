@@ -1,0 +1,28 @@
+{
+  "name": "lab13",
+  "version": "1.0.0",
+  "description": "lab13 clase lalo",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAO1215/TC2005B-A01707371.git"
+  },
+  "author": "SAO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SAO1215/TC2005B-A01707371/issues"
+  },
+  "homepage": "https://github.com/SAO1215/TC2005B-A01707371#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}

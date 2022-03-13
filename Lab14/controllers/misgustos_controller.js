@@ -20,7 +20,7 @@ exports.post_comida = (request, response, next) => {
     const comida = new Comidas(request.body.nombre);
     comida.save();
     response.status = 303;
-    response.redirect('/lab13/');
+    response.redirect('/lab12/');
 };
 
 exports.get_bandas = (request, response, next) => {
@@ -33,7 +33,7 @@ exports.post_bandas = (request, response, next) => {
     const bandas = new Banda(request.body.nombre);
     bandas.save();
     response.status = 303;
-    response.redirect('/lab13/');
+    response.redirect('/lab12/');
 };
 
 exports.get_hobbies = (request, response, next) => {
@@ -46,5 +46,5 @@ exports.post_hobbies = (request, response, next) => {
     const hobbies = new Hobbie(request.body.nombre);
     hobbies.save();
     response.status = 303;
-    response.redirect('/lab13/');
+    response.redirect('/lab12/');
 };
