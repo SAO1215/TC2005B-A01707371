@@ -14,12 +14,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/lab12', rutas_lab12);
+app.use('/lab13', rutas_lab12);
 app.use('/preguntas', rutas_preguntas);
 
 app.use((request, response, next) => {
     console.log('Middleware!');
-    response.send('Ruta laboratorio: http://localhost:3000/lab12/ o http://localhost:3000/preguntas'); //Manda la respuesta
+    response.send('Aqui no hay nada!!!!! Intenta la ruta laboratorio: http://localhost:3000/lab13/ o http://localhost:3000/preguntas'); //Manda la respuesta
 });
 
 
