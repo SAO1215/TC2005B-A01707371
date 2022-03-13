@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const rutas_lab12 = require('./routes/lab12.routes');
 const rutas_preguntas = require('./routes/preguntas.routes');
 
@@ -13,13 +14,14 @@ app.set('views', 'views');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
 
-app.use('/lab12', rutas_lab12);
+app.use('/lab13', rutas_lab12);
 app.use('/preguntas', rutas_preguntas);
 
 app.use((request, response, next) => {
     console.log('Middleware!');
-    response.send('Ruta laboratorio: http://localhost:3000/lab12/ o http://localhost:3000/preguntas'); //Manda la respuesta
+    response.send('Aqui no hay nada!!!!! Intenta la ruta laboratorio: http://localhost:3000/lab13/ o http://localhost:3000/preguntas'); //Manda la respuesta
 });
 
 
