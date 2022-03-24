@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const rutas_usuarios = require('./routes/auth.routes');
-const rutas_lab17 = require('./routes/lab12.routes');
+const rutas_lab17 = require('./routes/lab17.routes');
 const rutas_preguntas = require('./routes/preguntas.routes');
 
 const app = express();
