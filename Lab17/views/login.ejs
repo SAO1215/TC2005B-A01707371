@@ -1,0 +1,16 @@
+<%- include('includes/head.ejs') %>
+<div class="content has-text-centered"><br>
+    <h1>Bienvenido a tu sitio personal</h1>
+    <main>
+        <h3>Aquí se habla de cosas sobre ti</h3>
+        <h5>Inicia sesion para acceder</h5>
+        <form action="/users/login" method="POST">
+            <label for="nombre">Nombre de usuario: </label>
+            <input type="text" name="nombre" required> <br><br>
+            <label for="passwd">Constraseña: </label>
+            <input type="password" name="passwd" required> <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </br><br><br><br><br>
+</div>
+<%- include('includes/foot.ejs') %>
