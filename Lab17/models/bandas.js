@@ -1,3 +1,5 @@
+const db = require('../util/database');
+
 const bandas = [
     {nombre: "The Smiths"},
     {nombre:  "The Cure"}, 
@@ -16,6 +18,6 @@ module.exports = class Banda {
     }
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return bandas;
+        return db.execute('SELECT * FROM bandas');
     }
 }

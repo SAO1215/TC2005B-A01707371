@@ -1,3 +1,4 @@
+const db = require('../util/database');
 
 const hobbies = [
     {nombre: "Leer"},
@@ -17,6 +18,6 @@ module.exports = class Hobbie {
     }
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
-        return hobbies;
+        return db.execute('SELECT * FROM hobbies');
     }
 }

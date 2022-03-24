@@ -4,21 +4,50 @@ const Comidas = require('../models/gustos');
 const Hobbie = require('../models/hobbies');
 const Banda = require('../models/bandas');
 
+const comida = [];
+const bandas = [];
+const hobbies = [];
+
 exports.listar = (request, response, next) => {
-    console.log(request.body);
-    console.log(request.get('Cookie').split(':')[1]);
-    console.log(request.cookies);
-    //response.render('misgustos',{comida: comida, bandas: bandas, hobbies: hobbies});
-    response.render('misgustos', {comida: Comidas.fetchAll(), bandas: Banda.fetchAll(), hobbies: Hobbie.fetchAll(),
-        usuario: request.session.usuario});
+    Comidas.fetchAll()
+    .then(([comida, fieldData]) => {
+        Banda.fetchAll()
+        .then(([bandas,fieldData]) =>{
+            Hobbie.fetchAll()
+            .then(([hobbies,fieldData]) =>{
+                response.render('misgustos', {
+                    comida: comida,
+                    bandas: bandas,
+                    hobbies: hobbies,
+                    usuario: request.session.usuario ? request.session.usuario : '',
+                    ultima_comida: request.cookies.ultima_comida ? request.cookies.ultima_comida : '',
+                    ultima_banda: request.cookies.ultima_banda ? request.cookies.ultima_banda : '',
+                    ultimo_hobbie: request.cookies.ultimo_hobbie ? request.cookies.ultimo_hobbie : '',
+                })
+            }).catch(error => {
+                console.log(error);
+            });
+        }).catch(error =>{
+            console.log(error);
+        });
+       
+    })
+    .catch(err => console.log(err)); 
 };
 
 exports.get_comida = (request, response, next) => {
-    console.log(request.body);
-    //response.render('comida');
-    response.render('comida', {
-        usuario: request.session.usuario  
-    });
+    Comidas.fetchAll()
+        .then(([rows, fieldData]) => {
+            response.render('comida', {
+                comida: rows,
+                usuario: request.session.usuario ? request.session.usuario : '',
+                //ultima_comida: request.cookies.ultima_comida ? request.cookies.ultima_comida : '',
+                //info: info //El primer info es la variable del template, el segundo la constante creada arriba
+            }); 
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 exports.post_comida = (request, response, next) => {
@@ -30,10 +59,18 @@ exports.post_comida = (request, response, next) => {
 };
 
 exports.get_bandas = (request, response, next) => {
-    console.log(request.body);
-    response.render('bandas', {
-        usuario: request.session.usuario  
-    });
+    Banda.fetchAll()
+        .then(([rows, fieldData]) => {
+            response.render('bandas', {
+                bandas: rows,
+                usuario: request.session.usuario ? request.session.usuario : '',
+                //ultima_comida: request.cookies.ultima_comida ? request.cookies.ultima_comida : '',
+                //info: info //El primer info es la variable del template, el segundo la constante creada arriba
+            }); 
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 exports.post_bandas = (request, response, next) => {
@@ -45,10 +82,18 @@ exports.post_bandas = (request, response, next) => {
 };
 
 exports.get_hobbies = (request, response, next) => {
-    console.log(request.body);
-    response.render('hobbies', {
-        usuario: request.session.usuario  
-    });
+    Hobbie.fetchAll()
+        .then(([rows, fieldData]) => {
+            response.render('hobbies', {
+                bandas: rows,
+                usuario: request.session.usuario ? request.session.usuario : '',
+                //ultima_comida: request.cookies.ultima_comida ? request.cookies.ultima_comida : '',
+                //info: info //El primer info es la variable del template, el segundo la constante creada arriba
+            }); 
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 exports.post_hobbies = (request, response, next) => {
