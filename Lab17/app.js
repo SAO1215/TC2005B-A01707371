@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const rutas_usuarios = require('./routes/auth.routes');
-const rutas_lab12 = require('./routes/lab12.routes');
+const rutas_lab17 = require('./routes/lab17.routes');
 const rutas_preguntas = require('./routes/preguntas.routes');
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
-app.use('/lab14', rutas_lab12);
+app.use('/lab17', rutas_lab17);
 app.use('/preguntas', rutas_preguntas);
 app.use('/users', rutas_usuarios);
 

@@ -26,7 +26,7 @@ exports.post_comida = (request, response, next) => {
     const comida = new Comidas(request.body.nombre);
     comida.save();
     response.setHeader('Set-Cookie', 'ultima_comida'+comida.nombre );
-    response.redirect('/lab14/');
+    response.redirect('/lab17/');
 };
 
 exports.get_bandas = (request, response, next) => {
@@ -41,7 +41,7 @@ exports.post_bandas = (request, response, next) => {
     const bandas = new Banda(request.body.nombre);
     bandas.save();
     response.setHeader('Set-Cookie', 'ultima_banda='+bandas.nombre );
-    response.redirect('/lab14/');
+    response.redirect('/lab17/');
 };
 
 exports.get_hobbies = (request, response, next) => {
@@ -56,5 +56,5 @@ exports.post_hobbies = (request, response, next) => {
     const hobbies = new Hobbie(request.body.nombre);
     hobbies.save();
     response.setHeader('Set-Cookie', 'ultimo_hobbie='+hobbies.nombre );
-    response.redirect('/lab14/');
+    response.redirect('/lab17/');
 };
