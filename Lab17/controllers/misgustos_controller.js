@@ -51,11 +51,16 @@ exports.get_comida = (request, response, next) => {
 };
 
 exports.post_comida = (request, response, next) => {
-    console.log(request.body);
-    const comida = new Comidas(request.body.nombre);
-    comida.save();
-    response.setHeader('Set-Cookie', 'ultima_comida'+comida.nombre );
-    response.redirect('/lab17/');
+    const comida = 
+        new Comidas(request.body.nombre, request.body.descripcion, request.body.imagen);
+    comida.save()
+        .then(() => {
+            request.session.info = comida.nombre + ' fue registrado con éxito';
+            response.setHeader('Set-Cookie', 
+                'ultima_comida='+comida.nombre+'; HttpOnly');
+            response.redirect('/lab17/');
+        })
+        .catch(err => console.log(err));
 };
 
 exports.get_bandas = (request, response, next) => {
@@ -74,11 +79,16 @@ exports.get_bandas = (request, response, next) => {
 };
 
 exports.post_bandas = (request, response, next) => {
-    console.log(request.body);
-    const bandas = new Banda(request.body.nombre);
-    bandas.save();
-    response.setHeader('Set-Cookie', 'ultima_banda='+bandas.nombre );
-    response.redirect('/lab17/');
+    const bandas = 
+        new Banda(request.body.nombre, request.body.descripcion, request.body.imagen);
+    bandas.save()
+        .then(() => {
+            request.session.info = bandas.nombre + ' fue registrado con éxito';
+            response.setHeader('Set-Cookie', 
+                'ultima_banda='+bandas.nombre+'; HttpOnly');
+            response.redirect('/lab17/');
+        })
+        .catch(err => console.log(err));
 };
 
 exports.get_hobbies = (request, response, next) => {
@@ -97,9 +107,14 @@ exports.get_hobbies = (request, response, next) => {
 };
 
 exports.post_hobbies = (request, response, next) => {
-    console.log(request.body);
-    const hobbies = new Hobbie(request.body.nombre);
-    hobbies.save();
-    response.setHeader('Set-Cookie', 'ultimo_hobbie='+hobbies.nombre );
-    response.redirect('/lab17/');
+    const hobbies = 
+        new Hobbie(request.body.nombre, request.body.descripcion, request.body.imagen);
+    hobbies.save()
+        .then(() => {
+            request.session.info = hobbies.nombre + ' fue registrado con éxito';
+            response.setHeader('Set-Cookie', 
+                'ultimo_hobbie='+hobbies.nombre+'; HttpOnly');
+            response.redirect('/lab17/');
+        })
+        .catch(err => console.log(err));
 };
