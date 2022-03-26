@@ -1,0 +1,16 @@
+<%- include('includes/head.ejs') %>
+<section>
+    <div class="content has-text-centered"><br>
+        <h2>Aquí se habla de nuestras bandas favoritas</h2><br><br>
+        <form action="/lab17/bandas" method="POST">
+            <label for="nombre">Agrega la banda o artista que mas te gusta: </label> 
+            <input type="text" id="nombre" name="nombre" placeholder="Pedro">
+            <label for="descripcion">Descipción: </label>
+            <input type="text" id="descripcion" name="descripcion" placeholder="Le gusta la piña">
+            <label for="Imagen">Imagen: </label>
+            <input type="text" id="imagen" name="imagen" placeholder="https://s2.coinmarketcap.com/static/img/coins/200x200/16636.png">
+            <input type="submit" value="Enviar"> 
+        </form> <br><br>
+        <a href="/lab17/">Regresar a la pagina principal</a> 
+</section>
+<%- include('includes/foot2.ejs') %>
