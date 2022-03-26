@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     user: 'root',
     database: 'tc2005b',
     password: 'root',
-    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
 });
 
 module.exports = pool.promise();
