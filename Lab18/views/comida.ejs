@@ -3,6 +3,7 @@
     <div class="content has-text-centered"><br>
         <h2>Aquí se habla de nuestra comida favorita</h2><br><br>
         <form action="/lab18/comida" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label for="nombre">Agrega la comida que mas te gusta: </label> 
             <input type="text" id="nombre" name="nombre" placeholder="Pedro">
             <label for="descripcion">Descipción: </label>

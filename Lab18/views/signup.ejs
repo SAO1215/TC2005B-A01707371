@@ -3,6 +3,7 @@
         <h1>Bienvebido, en este sitio podras hablar de ti y las cosas que te gustan</h1>
         <p>Ingresa los datos del nuevo usuario:</p>
         <form action="/users/signup" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label for="nombre">Nombre completo del nuevo usuario: </label>
             <input type="text" name="nombre" required> <br>
             <label for="username">Nombre del nuevo usuario: </label>
@@ -12,6 +13,6 @@
             <input type="submit" value="Enviar">
         </form>
         <br><br>
-        <a href="/misgustos/">Regresar a la pagina principal</a>
+        <a href="/users/">Regresar a la pagina principal</a>
     </br>
 <%- include('includes/foot.ejs') %>

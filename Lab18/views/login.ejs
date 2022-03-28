@@ -5,6 +5,7 @@
         <h3>Aquí se habla de cosas sobre ti</h3>
         <h5>Inicia sesion para acceder</h5>
         <form action="/users/login" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label for="nombre">Nombre de usuario: </label>
             <input type="text" name="nombre" required> <br><br>
             <label for="passwd">Constraseña: </label>

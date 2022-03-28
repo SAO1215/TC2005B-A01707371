@@ -3,6 +3,7 @@
     <div class="content has-text-centered"><br>
         <h2>Aquí se habla de nuestras bandas favoritas</h2><br><br>
         <form action="/lab18/bandas" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label for="nombre">Agrega la banda o artista que mas te gusta: </label> 
             <input type="text" id="nombre" name="nombre" placeholder="Pedro">
             <label for="descripcion">Descipción: </label>
