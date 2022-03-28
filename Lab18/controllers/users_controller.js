@@ -11,7 +11,7 @@ exports.get_login =  (request, response, next) => {
 exports.login =  (request, response, next) => {
     if (User.login(request.body.nombre, request.body.passwd)) {
         request.session.usuario = request.body.nombre;
-        response.redirect('/lab17/');
+        response.redirect('/lab18/');
     } else {
         response.redirect('/users/login');
     }

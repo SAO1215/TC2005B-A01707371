@@ -58,7 +58,7 @@ exports.post_comida = (request, response, next) => {
             request.session.info = comida.nombre + ' fue registrado con éxito';
             response.setHeader('Set-Cookie', 
                 'ultima_comida='+comida.nombre+'; HttpOnly');
-            response.redirect('/lab17/');
+            response.redirect('/lab18/');
         })
         .catch(err => console.log(err));
 };
@@ -86,7 +86,7 @@ exports.post_bandas = (request, response, next) => {
             request.session.info = bandas.nombre + ' fue registrado con éxito';
             response.setHeader('Set-Cookie', 
                 'ultima_banda='+bandas.nombre+'; HttpOnly');
-            response.redirect('/lab17/');
+            response.redirect('/lab18/');
         })
         .catch(err => console.log(err));
 };
@@ -114,7 +114,7 @@ exports.post_hobbies = (request, response, next) => {
             request.session.info = hobbies.nombre + ' fue registrado con éxito';
             response.setHeader('Set-Cookie', 
                 'ultimo_hobbie='+hobbies.nombre+'; HttpOnly');
-            response.redirect('/lab17/');
+            response.redirect('/lab18/');
         })
         .catch(err => console.log(err));
 };
