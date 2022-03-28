@@ -1,6 +1,6 @@
 const express = require('express');
-
 const router = express.Router();
+const isAuth = require('../controllers/is-auth.js');
 
 const path = require('path');
 router.get('/lab1', (request, response, next) => {
@@ -9,19 +9,19 @@ router.get('/lab1', (request, response, next) => {
 
 const gustosController = require('../controllers/misgustos_controller');
 
-router.get('/', gustosController.listar);
+router.get('/', isAuth, gustosController.listar);
 
-router.get('/comida', gustosController.get_comida);
+router.get('/comida', isAuth, gustosController.get_comida);
 
-router.post('/comida', gustosController.post_comida);
+router.post('/comida', isAuth, gustosController.post_comida);
 
-router.get('/bandas', gustosController.get_bandas);
+router.get('/bandas', isAuth, gustosController.get_bandas);
 
-router.post('/bandas', gustosController.post_bandas);
+router.post('/bandas', isAuth, gustosController.post_bandas);
 
-router.get('/hobbies', gustosController.get_hobbies);
+router.get('/hobbies', isAuth, gustosController.get_hobbies);
 
-router.post('/hobbies', gustosController.post_hobbies);
+router.post('/hobbies', isAuth, gustosController.post_hobbies);
 
 
 module.exports = router;

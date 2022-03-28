@@ -22,9 +22,9 @@ module.exports = class User {
             }); 
     }
 
-    //Este método servirá para devolver los objetos del almacenamiento persistente.
-    static login(usuario, password) {
-        return true;
+    static findOne(usuario) {
+        return db.execute(
+            'SELECT * FROM usuarios WHERE username=?', [usuario]);
     }
 
 }

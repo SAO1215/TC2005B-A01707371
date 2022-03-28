@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const bcrypt = require('bcryptjs');
 
 exports.get_login =  (request, response, next) => {
     const usuario = request.session.usuario ? request.session.usuario : '';
@@ -9,12 +10,30 @@ exports.get_login =  (request, response, next) => {
 };
 
 exports.login =  (request, response, next) => {
-    if (User.login(request.body.nombre, request.body.passwd)) {
-        request.session.usuario = request.body.nombre;
-        response.redirect('/lab18/');
-    } else {
-        response.redirect('/users/login');
-    }
+    User.findOne(request.body.nombre)
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            if (rows.length < 1) {
+                return response.redirect('/users/login');
+            }
+            const user = new User(rows[0].username, rows[0].password, rows[0].nombre);
+            bcrypt.compare(request.body.passwd, user.password)
+                .then(doMatch => {
+                    if (doMatch) {
+                        request.session.isLoggedIn = true;
+                        request.session.user = user;
+                        request.session.usuario = user.nombre;
+                        return request.session.save(err => {
+                            response.redirect('/lab18/');
+                        });
+                    }
+                    response.redirect('/users/login');
+                }).catch(err => {
+                    response.redirect('/users/login');
+                });
+        }).catch((err) => {
+            console.log(err);
+        });
 };
 
 exports.get_signup =  (request, response, next) => {
@@ -26,7 +45,7 @@ exports.get_signup =  (request, response, next) => {
 exports.post_signup =  (request, response, next) => {
     const nuevo_usuario = 
         new User(request.body.username, request.body.password, request.body.nombre);
-        
+
     nuevo_usuario.save()
         .then(() => {
             response.redirect('/users/login');
