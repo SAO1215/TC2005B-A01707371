@@ -17,6 +17,24 @@ exports.login =  (request, response, next) => {
     }
 };
 
+exports.get_signup =  (request, response, next) => {
+    response.render('signup', {
+        usuario: request.session.usuario ? request.session.usuario : '',
+    });
+};
+
+exports.post_signup =  (request, response, next) => {
+    const nuevo_usuario = 
+        new User(request.body.username, request.body.password, request.body.nombre);
+        
+    nuevo_usuario.save()
+        .then(() => {
+            response.redirect('/users/login');
+        }).catch((err) => {
+            console.log(err);
+        });
+};
+
 exports.logout =  (request, response, next) => {
     request.session.destroy(() => {
         response.redirect('/users/login'); //Este código se ejecuta cuando la sesión se elimina.

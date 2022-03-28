@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs') %>
+    <h1 class="content has-text-centered">Bienvebido, en este sitio podras hablar de ti y las cosas que te gustan</h1>
+    <main class="content has-text-centered">
+        <p>Ingresa los datos del nuevo usuario:</p>
+        <form action="/users/signup" method="POST">
+            <label for="nombre">Nombre completo del nuevo usuario: </label>
+            <input type="text" name="nombre" required> <br>
+            <label for="username">Nombre del nuevo usuario: </label>
+            <input type="text" name="username" required> <br>
+            <label for="password">Password del nuevo usuario: </label>
+            <input type="password" name="password" required> <br>
+            <input type="submit" value="Enviar">
+        </form>
+        <br><br>
+        <a href="/misgustos/">Regresar a la pagina principal</a>
+    </br>
+<%- include('includes/foot.ejs') %>
