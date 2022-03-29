@@ -1,0 +1,81 @@
+<%- include('includes/head.ejs') %>
+<section>
+    <div class="content has-text-centered"> 
+        <!--<div class="columns is-flex is-centered">---> <br><br>
+             <!--<h1><%= usuario %></h1> --->
+            <% if (usuario != '') { %>
+                <h1>Hola <%= usuario %></h1>
+                <% } %>
+            No me llamo <% if (usuario != '') { %>
+                <%= usuario%>
+                <%}%>, pero da igual, no soy fan de mi nombre. <br>
+            Actualmente tengo 19 años, soy estudiante de cuarto semestre ITC en el TEC, no tengo idea de en que me quiero especializar me interesan muchas cosas aunque no sea buena en ninguna. 
+            <h2>Mis Gustos</h2>
+            <h5>Comida Favorita</h5>
+            <div class="list-item"> 
+                <% for (let comid of comida) { %>
+                    <li> <span id="elemento_ajax" data-id="<%= comid.nombre %>"><%= comid.nombre %></span></li>
+                <%}  %>
+            </div><br>
+            <div class="buttons is-centered"> 
+                <a href="/lab18/comida"> <button class="button is-danger is-light is-small">Agregar Comida</button></a>
+            </div><br>
+            <div id="respuesta_ajax">Datos AJAX...</div> <br>
+            <h5>Bandas Favoritas</h5> 
+            <div class="list-item">
+                <% for (let banda of bandas) { %>
+                    <li ><%= banda.nombre %></li>
+                <%} %>
+            </div><br>
+            <div class="buttons is-centered"> 
+                <a href="/lab18/bandas"> <button class="button is-danger is-light is-small">Agregar Banda</button></a>
+            </div><br>
+            <h5>Hobbies</h5> <div class="list-item">
+                <% for (let hobbie of hobbies) { %>
+                    <li ><%= hobbie.nombre %></li>
+                <%} %>
+            </div><br>
+            <div class="buttons is-centered"> 
+                <a href="/lab18/hobbies"> <button class="button is-danger is-light is-small">Agregar Hobbie</button></a>
+            </div><br>
+        <!--</div>--->
+        </div>
+    </div>
+</section> 
+
+<script>
+const accion_asincrona = (e) => {
+    console.log(e.target.dataset.id);
+    // const mensaje = document.getElementById('mensaje').value;
+    // //El token de protección CSRF
+    // const csrf = document.getElementById('_csrf').value;
+
+    //función que manda la petición asíncrona
+    fetch('/users/view/'+e.target.dataset.id, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+    //         'csrf-token': csrf
+        }
+    //     body: JSON.stringify(data)
+    }).then(result => {
+         return result.json(); //Regresa otra promesa
+    }).then(data => {
+        console.log(data);
+        //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+        document.getElementById("respuesta_ajax").innerHTML = '<div><p>'
+            + data.user.descripcion +
+            '</p></div>';
+    }).catch(err => {
+        console.log(err);
+    });
+};
+
+document.querySelectorAll('#elemento_ajax').forEach((e)=> {
+    e.addEventListener('click', accion_asincrona);
+});    
+
+
+</script>
+
+<%- include('includes/foot2.ejs') %>
