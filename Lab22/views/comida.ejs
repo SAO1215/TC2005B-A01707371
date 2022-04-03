@@ -2,16 +2,17 @@
 <section>
     <div class="content has-text-centered"><br>
         <h2>Aquí se habla de nuestra comida favorita</h2><br><br>
-        <form action="/lab18/comida" method="POST">
+        <form action="/lab18/comida" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             <label for="nombre">Agrega la comida que mas te gusta: </label> 
             <input type="text" id="nombre" name="nombre" placeholder="Pedro">
             <label for="descripcion">Descipción: </label>
             <input type="text" id="descripcion" name="descripcion" placeholder="Le gusta la piña">
             <label for="Imagen">Imagen: </label>
-            <input type="text" id="imagen" name="imagen" placeholder="https://s2.coinmarketcap.com/static/img/coins/200x200/16636.png">
-            <input type="submit" value="Enviar"> 
-        </form> <br><br>
+            <input type="file" name="imagen" required><br><br>
+            <input type ="submit" value="Enviar">
+        </form> 
+        <br><br>
         <a href="/lab18/">Regresar a la pagina principal</a> 
 </section>
 <%- include('includes/foot2.ejs') %>

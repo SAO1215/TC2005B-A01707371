@@ -51,8 +51,9 @@ exports.get_comida = (request, response, next) => {
 };
 
 exports.post_comida = (request, response, next) => {
+    console.log(request.file);
     const comida = 
-        new Comidas(request.body.nombre, request.body.descripcion, request.body.imagen);
+        new Comidas(request.body.nombre, request.body.descripcion, request.file.filename);
     comida.save()
         .then(() => {
             request.session.info = comida.nombre + ' fue registrado con éxito';
@@ -80,7 +81,7 @@ exports.get_bandas = (request, response, next) => {
 
 exports.post_bandas = (request, response, next) => {
     const bandas = 
-        new Banda(request.body.nombre, request.body.descripcion, request.body.imagen);
+        new Banda(request.body.nombre, request.body.descripcion, request.file.filename);
     bandas.save()
         .then(() => {
             request.session.info = bandas.nombre + ' fue registrado con éxito';
@@ -108,7 +109,7 @@ exports.get_hobbies = (request, response, next) => {
 
 exports.post_hobbies = (request, response, next) => {
     const hobbies = 
-        new Hobbie(request.body.nombre, request.body.descripcion, request.body.imagen);
+        new Hobbie(request.body.nombre, request.body.descripcion, request.file.filename);
     hobbies.save()
         .then(() => {
             request.session.info = hobbies.nombre + ' fue registrado con éxito';

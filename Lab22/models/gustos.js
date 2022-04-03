@@ -14,6 +14,7 @@ module.exports = class Comidas {
     }
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() {
+        console.log(db.execute('SELECT * FROM comida'));
         return db.execute('SELECT * FROM comida');
     }
 }
