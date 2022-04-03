@@ -14,7 +14,7 @@
             <h5>Comida Favorita</h5>
             <div class="list-item"> 
                 <% for (let comid of comida) { %>
-                    <li> <span id="elemento_ajax" data-id="<%= comid.nombre %>"><%= comid.nombre %></span></li>
+                    <li> <span id="elemento_ajax" data-id="<%= comid.id %>"><%= comid.nombre %></span></li>
                 <%}  %>
             </div><br>
             <div class="buttons is-centered"> 
@@ -63,9 +63,9 @@ const accion_asincrona = (e) => {
     }).then(data => {
         console.log(data);
         //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
-        document.getElementById("respuesta_ajax").innerHTML = '<div><p>'
-            + data.user.descripcion +
-            '</p></div>';
+        document.getElementById("respuesta_ajax").innerHTML = '<div><span>'
+            + data.usuario +
+            '</span></div>';
     }).catch(err => {
         console.log(err);
     });
@@ -74,7 +74,6 @@ const accion_asincrona = (e) => {
 document.querySelectorAll('#elemento_ajax').forEach((e)=> {
     e.addEventListener('click', accion_asincrona);
 });    
-
 
 </script>
 
